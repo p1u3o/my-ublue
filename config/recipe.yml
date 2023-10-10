@@ -24,16 +24,21 @@ modules:
   - type: rpm-ostree
     repos: 
       - https://copr.fedorainfracloud.org/coprs/ublue-os/akmods/repo/fedora-39/ublue-os-akmods-fedora-39.repo
+      - https://copr.fedorainfracloud.org/coprs/hyperreal/better_fonts/repo/fedora-39/hyperreal-better_fonts-fedora-39.repo
     install:
       - fish
       - mock
       - systemd-boot-unsigned
       - tuned
       - vdpauinfo
+      - rpm-build 
+      - ttmkfdir
       - kmod-openrgb
       - kmod-winesync
       - kmod-openrazer
       - kmod-wl
+      - fontconfig-font-replacements
+      - fontconfig-enhanced-defaults
     remove:
       - xorg-x11-drv-nvidia-power # Breaks Wayland
       - power-profiles-daemon # Effectively unmantained
