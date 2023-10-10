@@ -81,6 +81,18 @@ modules:
     scripts:
       - ms-fonts.sh
 
+  - type: systemd
+    system:
+      enabled:
+        - tuned.service
+      disabled:
+        - ModemManager.service
+        - pcscd.service
+        - pcscd.socket
+        - gssproxy.service
+        - sssd-kcm.service
+        - sssd-kcm.socket
+
   - type: script
     scripts:
       # this sets up the proper policy & signing files for signed images to work
