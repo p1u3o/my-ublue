@@ -73,8 +73,10 @@ modules:
         
   - type: script
     scripts:
-      # this sets up the proper policy & signing files for signed images to work
       - build-kmods.sh
+
+  - type: script
+    scripts:
       - ms-fonts.sh
 
   - type: script
