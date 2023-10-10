@@ -29,13 +29,15 @@ modules:
       - systemd-boot-unsigned
       - tuned
       - vdpauinfo
-      - langpacks-en_GB
       - kmod-openrgb
       - kmod-winesync
       - kmod-openrazer
       - kmod-wl
     remove:
       - xorg-x11-drv-nvidia-power # Breaks Wayland
+      - power-profiles-daemon # Effectively unmantained
+      - gnome-software # 10GB of RAM when closed? no thanks
+      - gnome-software-rpm-ostree 
       # - firefox # default firefox removed in favor of flatpak
       # - firefox-langpacks # langpacks needs to also be removed to prevent dependency problems
 
