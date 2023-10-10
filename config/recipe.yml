@@ -39,6 +39,7 @@ modules:
       - kmod-wl
       - fontconfig-font-replacements
       - fontconfig-enhanced-defaults
+      - moby-engine
     remove:
       - xorg-x11-drv-nvidia-power # Breaks Wayland
       - power-profiles-daemon # Effectively unmantained
@@ -54,6 +55,7 @@ modules:
         # in your custom.just (added by default) or local justfile
       - nix-installer # shell shortcuts for determinate system's nix installers
       - ublue-os-wallpapers
+      - container-tools
       # - ublue-update # https://github.com/ublue-os/ublue-update
       # - dconf-update-service # a service unit that updates the dconf db on boot
       # - devpod # https://devpod.sh/ as an rpm
