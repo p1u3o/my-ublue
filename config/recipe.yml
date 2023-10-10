@@ -33,7 +33,9 @@ modules:
       - kmod-openrgb
       - kmod-winesync
       - kmod-openrazer
+      - kmod-wl
     remove:
+      - xorg-x11-drv-nvidia-power # Breaks Wayland
       # - firefox # default firefox removed in favor of flatpak
       # - firefox-langpacks # langpacks needs to also be removed to prevent dependency problems
 
@@ -47,7 +49,19 @@ modules:
       # - ublue-update # https://github.com/ublue-os/ublue-update
       # - dconf-update-service # a service unit that updates the dconf db on boot
       # - devpod # https://devpod.sh/ as an rpm
-
+      
+  - type: fonts
+    fonts:
+      nerd-fonts:
+        - FiraCode # don't add "Nerd Font" suffix.
+        - Hack
+        - SourceCodePro
+        - Terminus
+        - JetBrainsMono
+        - NerdFontsSymbolsOnly
+      google-fonts:
+        - Roboto
+        - Open Sans
 
   - type: yafti
       # if included, yafti and it's dependencies (pip & libadwaita)
