@@ -79,6 +79,13 @@ modules:
       # this sets up the proper policy & signing files for signed images to work
       - build-kmods.sh
 
+  - type: rpm-ostree
+    remove:
+      - mock 
+      - dnf
+      - dnf5
+      - yum
+
   - type: script
     scripts:
       # this sets up the proper policy & signing files for signed images to work
