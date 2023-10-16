@@ -82,6 +82,10 @@ modules:
     scripts:
       - ms-fonts.sh
 
+- type: script
+    scripts:
+      - java.sh
+      
   - type: systemd
     system:
       enabled:
