@@ -82,7 +82,7 @@ modules:
     scripts:
       - ms-fonts.sh
 
-- type: script
+  - type: script
     scripts:
       - java.sh
       
