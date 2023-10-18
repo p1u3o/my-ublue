@@ -27,9 +27,9 @@ modules:
       - https://copr.fedorainfracloud.org/coprs/hyperreal/better_fonts/repo/fedora-39/hyperreal-better_fonts-fedora-39.repo
     install:
       - fish
-      - mock
-      - systemd-boot-unsigned
-      - tuned
+      - mock # needed for akmods
+      - systemd-boot-unsigned # systemd-boot efi binaries
+      - tuned # replace power-profiles-daemon
       - vdpauinfo
       - rpm-build 
       - ttmkfdir
@@ -41,9 +41,11 @@ modules:
       - fontconfig-enhanced-defaults
       - moby-engine
       - flatpak-builder
+      - telnet
+      - netcat
     remove:
-      - xorg-x11-drv-nvidia-power # Breaks Wayland
-      - power-profiles-daemon # Effectively unmantained
+      - xorg-x11-drv-nvidia-power # breaks Wayland
+      - power-profiles-daemon # effectively unmantained
       - gnome-software # 10GB of RAM when closed? no thanks
       - gnome-software-rpm-ostree 
       # - firefox # default firefox removed in favor of flatpak
