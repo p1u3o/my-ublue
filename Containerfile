@@ -34,7 +34,6 @@ COPY config /tmp/config/
 
 COPY --from=ghcr.io/ublue-os/akmods:main-39 /rpms/ /tmp/rpms
 RUN find /tmp/rpms
-RUN rpm-ostree install /tmp/rpms/ublue-os/ublue-os-akmods*.rpm
 RUN rpm-ostree install /tmp/rpms/ublue-os/kmod-openrazer-*.rpm
 RUN rpm-ostree install /tmp/rpms/ublue-os/kmod-openrgb-*.rpm
 RUN rpm-ostree install /tmp/rpms/ublue-os/kmod-v4l2loopback-*.rpm
