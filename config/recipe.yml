@@ -23,7 +23,7 @@ modules:
 
   - type: rpm-ostree
     repos: 
-      - https://copr.fedorainfracloud.org/coprs/ublue-os/akmods/repo/fedora-39/ublue-os-akmods-fedora-39.repo
+      #- https://copr.fedorainfracloud.org/coprs/ublue-os/akmods/repo/fedora-39/ublue-os-akmods-fedora-39.repo
       - https://copr.fedorainfracloud.org/coprs/hyperreal/better_fonts/repo/fedora-39/hyperreal-better_fonts-fedora-39.repo
     install:
       - fish
@@ -33,16 +33,13 @@ modules:
       - vdpauinfo
       - rpm-build 
       - ttmkfdir
-      - kmod-openrgb
-      - kmod-winesync
-      - kmod-openrazer
-      - kmod-wl
       - fontconfig-font-replacements
       - fontconfig-enhanced-defaults
       - moby-engine
       - flatpak-builder
       - telnet
       - netcat
+      - rclone
     remove:
       - xorg-x11-drv-nvidia-power # breaks Wayland
       - power-profiles-daemon # effectively unmantained
