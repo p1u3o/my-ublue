@@ -34,11 +34,11 @@ COPY config /tmp/config/
 
 COPY --from=ghcr.io/ublue-os/akmods:main-39 /rpms/ /tmp/rpms
 RUN find /tmp/rpms
-RUN rpm-ostree install /tmp/rpms/ublue-os/kmod-openrazer-*.rpm
-RUN rpm-ostree install /tmp/rpms/ublue-os/kmod-openrgb-*.rpm
-RUN rpm-ostree install /tmp/rpms/ublue-os/kmod-v4l2loopback-*.rpm
-RUN rpm-ostree install /tmp/rpms/ublue-os/kmod-winesync-*.rpm
-RUN rpm-ostree install /tmp/rpms/ublue-os/kmod-wl-*.rpm
+RUN rpm-ostree install /tmp/rpms/kmods/kmod-openrazer-*.rpm
+RUN rpm-ostree install /tmp/rpms/kmods/kmod-openrgb-*.rpm
+RUN rpm-ostree install /tmp/rpms/kmods/kmod-v4l2loopback-*.rpm
+RUN rpm-ostree install /tmp/rpms/kmods/kmod-winesync-*.rpm
+RUN rpm-ostree install /tmp/rpms/kmods/kmod-wl-*.rpm
 
 # Copy modules
 # The default modules are inside ublue-os/bling
