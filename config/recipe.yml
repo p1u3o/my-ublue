@@ -28,11 +28,9 @@ modules:
       - https://copr.fedorainfracloud.org/coprs/fynnfreyer/nautilus-copypath/repo/fedora-39/fynnfreyer-nautilus-copypath-fedora-39.repo
     install:
       - fish
-      - mock # needed for akmods
       - systemd-boot-unsigned # systemd-boot efi binaries
       - tuned # replace power-profiles-daemon
       - vdpauinfo
-      - rpm-build 
       - ttmkfdir
       - fontconfig-font-replacements
       - fontconfig-enhanced-defaults
@@ -40,7 +38,6 @@ modules:
       - flatpak-builder
       - telnet
       - netcat
-      - rclone
       - virt-manager
       - nautilus-copypath
     remove:
