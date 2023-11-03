@@ -78,10 +78,6 @@ modules:
         
   - type: script
     scripts:
-      - build-kmods.sh
-
-  - type: script
-    scripts:
       - ms-fonts.sh
 
   - type: script
