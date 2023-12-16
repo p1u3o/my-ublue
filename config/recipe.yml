@@ -40,6 +40,12 @@ modules:
       - netcat
       - virt-manager
       - nautilus-copypath
+      - gnome-shell-extension-appindicator
+      - gnome-disk-utility
+      - lm_sensors
+      - lynis
+      - mediainfo
+      - chkrootkit
     remove:
       - xorg-x11-drv-nvidia-power # breaks Wayland
       - power-profiles-daemon # effectively unmantained
@@ -47,6 +53,7 @@ modules:
       - gnome-software-rpm-ostree 
       # - firefox # default firefox removed in favor of flatpak
       # - firefox-langpacks # langpacks needs to also be removed to prevent dependency problems
+      - gnome-tour
 
   - type: bling # configure what to pull in from ublue-os/bling
     install:
