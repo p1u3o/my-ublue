@@ -36,7 +36,6 @@ COPY --from=ghcr.io/ublue-os/akmods:main-39 /rpms/ /tmp/rpms
 RUN find /tmp/rpms
 RUN rpm-ostree install /tmp/rpms/kmods/kmod-openrazer-*.rpm
 RUN rpm-ostree install /tmp/rpms/kmods/kmod-openrgb-*.rpm
-RUN rpm-ostree install /tmp/rpms/kmods/kmod-xone-*.rpm
 RUN rpm-ostree install /tmp/rpms/kmods/kmod-v4l2loopback-*.rpm
 RUN rpm-ostree install /tmp/rpms/kmods/kmod-winesync-*.rpm
 RUN rpm-ostree install /tmp/rpms/kmods/kmod-wl-*.rpm
