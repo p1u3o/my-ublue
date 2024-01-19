@@ -41,6 +41,9 @@ RUN rpm-ostree install /tmp/rpms/kmods/kmod-winesync-*.rpm
 RUN rpm-ostree install /tmp/rpms/kmods/kmod-wl-*.rpm
 
 RUN rpm-ostree install /tmp/rpms/kmods/kmod-zenpower3-*.rpm
+RUN rpm-ostree install /tmp/rpms/kmods/kmod-ryzen-smu-*.rpm
+
+RUN rpm-ostree install /tmp/rpms/kmods/kmod-xone-*.rpm
 
 # Copy modules
 # The default modules are inside ublue-os/bling
