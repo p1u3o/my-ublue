@@ -84,7 +84,7 @@ modules:
   - type: script
     scripts:
       - ms-fonts.sh
-      - java.sh
+      #- java.sh
       - gnome-patched.sh
       
   - type: systemd
