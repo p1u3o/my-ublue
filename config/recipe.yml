@@ -46,6 +46,7 @@ modules:
       - lynis
       - mediainfo
       - chkrootkit
+      - httpie
     remove:
       - xorg-x11-drv-nvidia-power # breaks Wayland
       - power-profiles-daemon # effectively unmantained
