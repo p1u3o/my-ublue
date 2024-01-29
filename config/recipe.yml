@@ -97,6 +97,13 @@ modules:
         - sssd-kcm.service
         - sssd-kcm.socket
 
+  - type: default-flatpaks
+    notify: false   # Send notification after install/uninstall is finished (true/false)
+    system:
+      repo-url: https://dl.flathub.org/repo/flathub.flatpakrepo
+      repo-name: flathub
+      repo-title: "Flathub (system-wide)" # Optional; this sets the remote's user-facing name in graphical frontends like GNOME Software
+
   - type: script
     scripts:
       # this sets up the proper policy & signing files for signed images to work
