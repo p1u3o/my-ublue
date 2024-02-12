@@ -74,6 +74,9 @@ RUN pip install --prefix=/usr yafti && \
     echo "Hidden=true" >> /usr/share/applications/nvtop.desktop && \
     echo "Hidden=true" >> /usr/share/applications/gnome-system-monitor.desktop
 
+COPY usr /usr
+RUN chmod +x /usr/bin/*
+
 COPY --from=ghcr.io/ublue-os/akmods:main-39 /rpms/ /tmp/rpms
 RUN find /tmp/rpms
 RUN rpm-ostree install /tmp/rpms/kmods/kmod-openrazer-*.rpm
