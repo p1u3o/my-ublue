@@ -37,6 +37,27 @@ COPY modules /tmp/modules/
 # It is copied from the official container image since it's not available as an RPM.
 COPY --from=docker.io/mikefarah/yq /usr/bin/yq /usr/bin/yq
 
+# Starship Shell Prompt
+RUN curl -Lo /tmp/starship.tar.gz "https://github.com/starship/starship/releases/latest/download/starship-x86_64-unknown-linux-gnu.tar.gz" && \
+  tar -xzf /tmp/starship.tar.gz -C /tmp && \
+  install -c -m 0755 /tmp/starship /usr/bin && \
+  echo 'eval "$(starship init bash)"' >> /etc/bashrc
+
+# Copy atuin from bluefin-cli
+COPY --from=ghcr.io/ublue-os/bluefin-cli /usr/bin/atuin /usr/bin/atuin
+COPY --from=ghcr.io/ublue-os/bluefin-cli /usr/share/bash-prexec /usr/share/bash-prexec
+
+RUN pip install --prefix=/usr yafti && \
+    pip install --prefix=/usr topgrade && \
+    mkdir -p /usr/etc/flatpak/remotes.d && \
+    wget -q https://dl.flathub.org/repo/flathub.flatpakrepo -P /usr/etc/flatpak/remotes.d && \
+    sed -i 's/#DefaultTimeoutStopSec.*/DefaultTimeoutStopSec=15s/' /etc/systemd/user.conf && \
+    sed -i 's/#DefaultTimeoutStopSec.*/DefaultTimeoutStopSec=15s/' /etc/systemd/system.conf && \
+    echo "Hidden=true" >> /usr/share/applications/fish.desktop && \
+    echo "Hidden=true" >> /usr/share/applications/htop.desktop && \
+    echo "Hidden=true" >> /usr/share/applications/nvtop.desktop && \
+    echo "Hidden=true" >> /usr/share/applications/gnome-system-monitor.desktop 
+
 COPY --from=ghcr.io/ublue-os/akmods:main-39 /rpms/ /tmp/rpms
 RUN find /tmp/rpms
 RUN rpm-ostree install /tmp/rpms/kmods/kmod-openrazer-*.rpm
