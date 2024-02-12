@@ -93,6 +93,7 @@ modules:
       #- java.sh
       - gnome-patched.sh
       - prompt.sh
+      - other.sh
       
   - type: systemd
     system:
