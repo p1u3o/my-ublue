@@ -47,6 +47,13 @@ RUN curl -Lo /tmp/starship.tar.gz "https://github.com/starship/starship/releases
 COPY --from=ghcr.io/ublue-os/bluefin-cli /usr/bin/atuin /usr/bin/atuin
 COPY --from=ghcr.io/ublue-os/bluefin-cli /usr/share/bash-prexec /usr/share/bash-prexec
 
+COPY --from=cgr.dev/chainguard/dive:latest /usr/bin/dive /usr/bin/dive
+COPY --from=cgr.dev/chainguard/flux:latest /usr/bin/flux /usr/bin/flux
+COPY --from=cgr.dev/chainguard/helm:latest /usr/bin/helm /usr/bin/helm
+COPY --from=cgr.dev/chainguard/ko:latest /usr/bin/ko /usr/bin/ko
+COPY --from=cgr.dev/chainguard/minio-client:latest /usr/bin/mc /usr/bin/mc
+COPY --from=cgr.dev/chainguard/kubectl:latest /usr/bin/kubectl /usr/bin/kubectl
+
 COPY --from=ghcr.io/ublue-os/akmods:main-39 /rpms/ /tmp/rpms
 RUN find /tmp/rpms
 RUN rpm-ostree install /tmp/rpms/kmods/kmod-openrazer-*.rpm
