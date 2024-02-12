@@ -87,6 +87,7 @@ modules:
       - ms-fonts.sh
       #- java.sh
       - gnome-patched.sh
+      - prompt.sh
       
   - type: systemd
     system:
