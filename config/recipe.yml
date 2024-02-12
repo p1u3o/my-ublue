@@ -30,10 +30,10 @@ modules:
       - fish
       - systemd-boot-unsigned # systemd-boot efi binaries
       - tuned # replace power-profiles-daemon
-			- tuned-ppd
-			- tuned-utils
-			- tuned-utils-systemtap
-			- tuned-profiles-atomic
+      - tuned-ppd
+      - tuned-utils
+      - tuned-utils-systemtap
+      - tuned-profiles-atomic
       - vdpauinfo
       - ttmkfdir
       - fontconfig-font-replacements
