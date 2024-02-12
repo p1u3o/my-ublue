@@ -54,6 +54,26 @@ COPY --from=cgr.dev/chainguard/ko:latest /usr/bin/ko /usr/bin/ko
 COPY --from=cgr.dev/chainguard/minio-client:latest /usr/bin/mc /usr/bin/mc
 COPY --from=cgr.dev/chainguard/kubectl:latest /usr/bin/kubectl /usr/bin/kubectl
 
+RUN curl -Lo ./kind "https://github.com/kubernetes-sigs/kind/releases/latest/download/kind-$(uname)-amd64" && \
+    chmod +x ./kind && \
+    mv ./kind /usr/bin/kind
+
+# Install kns/kctx and add completions for Bash
+RUN wget https://raw.githubusercontent.com/ahmetb/kubectx/master/kubectx -O /usr/bin/kubectx && \
+    wget https://raw.githubusercontent.com/ahmetb/kubectx/master/kubens -O /usr/bin/kubens && \
+    chmod +x /usr/bin/kubectx /usr/bin/kubens
+
+RUN pip install --prefix=/usr yafti && \
+    pip install --prefix=/usr topgrade && \
+    mkdir -p /usr/etc/flatpak/remotes.d && \
+    wget -q https://dl.flathub.org/repo/flathub.flatpakrepo -P /usr/etc/flatpak/remotes.d && \
+    sed -i 's/#DefaultTimeoutStopSec.*/DefaultTimeoutStopSec=15s/' /etc/systemd/user.conf && \
+    sed -i 's/#DefaultTimeoutStopSec.*/DefaultTimeoutStopSec=15s/' /etc/systemd/system.conf && \
+    echo "Hidden=true" >> /usr/share/applications/fish.desktop && \
+    echo "Hidden=true" >> /usr/share/applications/htop.desktop && \
+    echo "Hidden=true" >> /usr/share/applications/nvtop.desktop && \
+    echo "Hidden=true" >> /usr/share/applications/gnome-system-monitor.desktop
+
 COPY --from=ghcr.io/ublue-os/akmods:main-39 /rpms/ /tmp/rpms
 RUN find /tmp/rpms
 RUN rpm-ostree install /tmp/rpms/kmods/kmod-openrazer-*.rpm
