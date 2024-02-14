@@ -58,13 +58,13 @@ modules:
       - gnome-shell-extension-blur-my-shell
       - adw-gtk3-theme
     remove:
-      - xorg-x11-drv-nvidia-power # breaks Wayland
+      #- xorg-x11-drv-nvidia-power # breaks Wayland
       - power-profiles-daemon # effectively unmantained
       - gnome-software # 10GB of RAM when closed? no thanks
       - gnome-software-rpm-ostree 
       # - firefox # default firefox removed in favor of flatpak
       # - firefox-langpacks # langpacks needs to also be removed to prevent dependency problems
-      - gnome-tour
+      - gnome-tour # annoying
 
   - type: bling # configure what to pull in from ublue-os/bling
     install:
