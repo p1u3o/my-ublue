@@ -53,6 +53,9 @@ modules:
       - httpie
       - liquidctl
       - nautilus-open-any-terminal
+      - solaar
+      - gnome-shell-extension-appindicator
+      - gnome-shell-extension-blur-my-shell
     remove:
       - xorg-x11-drv-nvidia-power # breaks Wayland
       - power-profiles-daemon # effectively unmantained
