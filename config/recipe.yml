@@ -56,6 +56,7 @@ modules:
       - solaar
       - gnome-shell-extension-appindicator
       - gnome-shell-extension-blur-my-shell
+      - adw-gtk3-theme
     remove:
       - xorg-x11-drv-nvidia-power # breaks Wayland
       - power-profiles-daemon # effectively unmantained
