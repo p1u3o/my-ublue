@@ -79,6 +79,9 @@ RUN rpm-ostree install /tmp/rpms/kmods/kmod-wl-*.rpm
 RUN rpm-ostree install /tmp/rpms/kmods/kmod-ryzen-smu-*.rpm
 RUN rpm-ostree install /tmp/rpms/kmods/kmod-xone-*.rpm
 
+RUN setcap cap_setuid+ep /usr/bin/newuidmap
+RUN setcap cap_setgid+ep /usr/bin/newgidmap
+
 # Run the build script, then clean up temp files and finalize container build.
 RUN chmod +x /tmp/build.sh && /tmp/build.sh && \
     rm -rf /tmp/* /var/* && ostree container commit
