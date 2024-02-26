@@ -26,6 +26,7 @@ modules:
       #- https://copr.fedorainfracloud.org/coprs/ublue-os/akmods/repo/fedora-39/ublue-os-akmods-fedora-39.repo
       - https://copr.fedorainfracloud.org/coprs/hyperreal/better_fonts/repo/fedora-39/hyperreal-better_fonts-fedora-39.repo
       - https://copr.fedorainfracloud.org/coprs/fynnfreyer/nautilus-copypath/repo/fedora-39/fynnfreyer-nautilus-copypath-fedora-39.repo
+      - https://copr.fedorainfracloud.org/coprs/getpagespeed/wrk/repo/fedora-39/getpagespeed-wrk-fedora-39.repo
     install:
       - fish
       - systemd-boot-unsigned # systemd-boot efi binaries
@@ -57,6 +58,7 @@ modules:
       - gnome-shell-extension-appindicator
       - gnome-shell-extension-blur-my-shell
       - adw-gtk3-theme
+      - wrk
     remove:
       #- xorg-x11-drv-nvidia-power # breaks Wayland
       - power-profiles-daemon # effectively unmantained
