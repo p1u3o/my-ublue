@@ -7,6 +7,6 @@ rpm-ostree override replace \
     vte291 \
     vte-profile
 rpm-ostree install \
-    prompt
+    ptyxis
     
 rm -f /etc/yum.repos.d/_copr_kylegospo-prompt.repo
