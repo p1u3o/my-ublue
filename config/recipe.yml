@@ -59,6 +59,7 @@ modules:
       - gnome-shell-extension-blur-my-shell
       - adw-gtk3-theme
       - wrk
+      - android-tools
     remove:
       #- xorg-x11-drv-nvidia-power # breaks Wayland
       - power-profiles-daemon # effectively unmantained
