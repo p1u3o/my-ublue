@@ -29,6 +29,7 @@ modules:
       - https://copr.fedorainfracloud.org/coprs/getpagespeed/wrk/repo/fedora-39/getpagespeed-wrk-fedora-39.repo
     install:
       - fish
+      - zsh
       - systemd-boot-unsigned # systemd-boot efi binaries
       - tuned # replace power-profiles-daemon
       - tuned-ppd
