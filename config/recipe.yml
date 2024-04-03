@@ -20,6 +20,17 @@ modules:
           # configuration you wish to end up in /etc/ on the booted system
           # should be added into /usr/etc/ as that is the proper "distro"
           # config directory on ostree. Read more in the files module's README
+  - type: containerfile
+    snippets: 
+      - COPY --from=docker.io/mikefarah/yq /usr/bin/yq /usr/bin/yq
+      - COPY --from=ghcr.io/ublue-os/bluefin-cli /usr/bin/atuin /usr/bin/atuin
+      - COPY --from=ghcr.io/ublue-os/bluefin-cli /usr/share/bash-prexec /usr/share/bash-prexec
+      - COPY --from=cgr.dev/chainguard/dive:latest /usr/bin/dive /usr/bin/dive
+      - COPY --from=cgr.dev/chainguard/flux:latest /usr/bin/flux /usr/bin/flux
+      - COPY --from=cgr.dev/chainguard/helm:latest /usr/bin/helm /usr/bin/helm
+      - COPY --from=cgr.dev/chainguard/ko:latest /usr/bin/ko /usr/bin/ko
+      - COPY --from=cgr.dev/chainguard/minio-client:latest /usr/bin/mc /usr/bin/mc
+      - COPY --from=cgr.dev/chainguard/kubectl:latest /usr/bin/kubectl /usr/bin/kubectl
   - type: akmods
     install: 
       - openrazer
