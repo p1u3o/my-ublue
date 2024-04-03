@@ -20,7 +20,15 @@ modules:
           # configuration you wish to end up in /etc/ on the booted system
           # should be added into /usr/etc/ as that is the proper "distro"
           # config directory on ostree. Read more in the files module's README
-
+  - type: akmods
+    install: 
+      - openrazer
+      - openrgb
+      - v4l2loopback
+      - winesync
+      - wl
+      - ryzen-smu
+      - xone
   - type: rpm-ostree
     repos: 
       #- https://copr.fedorainfracloud.org/coprs/ublue-os/akmods/repo/fedora-39/ublue-os-akmods-fedora-39.repo
@@ -54,7 +62,6 @@ modules:
       - chkrootkit
       - httpie
       - liquidctl
-      - nautilus-open-any-terminal
       - solaar
       - gnome-shell-extension-appindicator
       - gnome-shell-extension-blur-my-shell
