@@ -135,6 +135,10 @@ modules:
         - sssd-kcm.service
         - sssd-kcm.socket
 
+  - type: containerfile
+    containerfiles:
+      - nvidia
+
   - type: default-flatpaks
     notify: false   # Send notification after install/uninstall is finished (true/false)
     system:
