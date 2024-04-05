@@ -4,8 +4,8 @@ name: my-ublue
 description: This is my personal OS image.
 
 # the base image to build on top of (FROM) and the version tag to use
-base-image: ghcr.io/ublue-os/silverblue-main
-image-version: 40 # latest is also supported if you want new updates ASAP
+base-image: ghcr.io/ublue-os/silverblue-nvidia
+image-version: 39 # latest is also supported if you want new updates ASAP
 
 # module configuration, executed in order
 # you can include multiple instances of the same module
@@ -40,7 +40,7 @@ modules:
       - wl
       - ryzen-smu
       - xone
-      - nvidia
+      # nvidia
   - type: rpm-ostree
     repos: 
       #- https://copr.fedorainfracloud.org/coprs/ublue-os/akmods/repo/fedora-39/ublue-os-akmods-fedora-39.repo
