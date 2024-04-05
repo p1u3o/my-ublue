@@ -119,7 +119,7 @@ modules:
     scripts:
       - ms-fonts.sh
       #- java.sh
-      #- gnome-patched.sh
+      - gnome-patched.sh
       - prompt.sh
       - other.sh
       
@@ -137,7 +137,7 @@ modules:
 
   - type: containerfile
     containerfiles:
-      - nvidia
+      #- nvidia
 
   - type: default-flatpaks
     notify: false   # Send notification after install/uninstall is finished (true/false)
