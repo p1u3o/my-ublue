@@ -36,7 +36,7 @@ modules:
       - openrazer
       - openrgb
       #- v4l2loopback
-      - winesync
+      # - winesync
       - wl
       - ryzen-smu
       - xone
