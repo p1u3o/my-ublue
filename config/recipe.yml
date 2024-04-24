@@ -120,7 +120,7 @@ modules:
     scripts:
       - ms-fonts.sh
       #- java.sh
-      - gnome-patched.sh
+      #- gnome-patched.sh
 #      - prompt.sh
       - other.sh
       
