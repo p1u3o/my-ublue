@@ -44,7 +44,7 @@ modules:
   - type: rpm-ostree
     repos: 
       #- https://copr.fedorainfracloud.org/coprs/ublue-os/akmods/repo/fedora-39/ublue-os-akmods-fedora-39.repo
-      - https://copr.fedorainfracloud.org/coprs/tigro/better_fonts/repo/fedora-%OS_VERSION%/hyperreal-better_fonts-fedora-%OS_VERSION%.repo
+      #- https://copr.fedorainfracloud.org/coprs/tigro/better_fonts/repo/fedora-%OS_VERSION%/hyperreal-better_fonts-fedora-%OS_VERSION%.repo
       - https://copr.fedorainfracloud.org/coprs/fynnfreyer/nautilus-copypath/repo/fedora-%OS_VERSION%/fynnfreyer-nautilus-copypath-fedora-%OS_VERSION%.repo
       - https://copr.fedorainfracloud.org/coprs/getpagespeed/wrk/repo/fedora-%OS_VERSION%/getpagespeed-wrk-fedora-%OS_VERSION%.repo
       - https://copr.fedorainfracloud.org/coprs/rhcontainerbot/podman-next/repo/fedora-%OS_VERSION%/rhcontainerbot-podman-next-fedora-%OS_VERSION%.repo
