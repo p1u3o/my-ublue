@@ -123,6 +123,7 @@ modules:
       #- gnome-patched.sh
       - prompt.sh
       - other.sh
+      - mesa.sh
       
   - type: systemd
     system:
