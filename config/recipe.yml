@@ -34,7 +34,7 @@ modules:
   - type: akmods
     install: 
       - openrazer
-      - openrgb
+      #- openrgb
       #- v4l2loopback
       # - winesync
       - wl
@@ -121,7 +121,7 @@ modules:
       - ms-fonts.sh
       #- java.sh
       #- gnome-patched.sh
-#      - prompt.sh
+      - prompt.sh
       - other.sh
       
   - type: systemd
