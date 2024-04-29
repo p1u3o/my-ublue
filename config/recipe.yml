@@ -38,7 +38,7 @@ modules:
       #- v4l2loopback
       # - winesync
       - wl
-      - ryzen-smu
+      #- ryzen-smu
       - xone
       # nvidia
   - type: rpm-ostree
