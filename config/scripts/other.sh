@@ -16,3 +16,9 @@ curl -Lo /tmp/starship.tar.gz "https://github.com/starship/starship/releases/lat
 tar -xzf /tmp/starship.tar.gz -C /tmp
 install -c -m 0755 /tmp/starship /usr/bin
 echo 'eval "$(starship init bash)"' >> /etc/bashrc
+
+rpm-ostree override replace \
+--experimental \
+--from repo=copr:copr.fedorainfracloud.org:ublue-os:staging \
+    mutter \
+    mutter-common
