@@ -121,7 +121,7 @@ modules:
       - ms-fonts.sh
       #- java.sh
       #- gnome-patched.sh
-      # - prompt.sh
+      - prompt.sh
       - other.sh
       - mesa.sh
       
